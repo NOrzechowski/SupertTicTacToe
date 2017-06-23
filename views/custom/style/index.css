@@ -1,0 +1,257 @@
+body {
+    #background: rgb(0,0,0);
+}
+
+.x{
+    background-size: 100% 100%;
+    background-image:url("../images/X.png");
+}
+.o{
+    background-image:url("../images/O.png");
+    background-size: 100% 100%;
+}
+
+/*###Style of main outter board###*/
+#main-box{
+    background:rgb(255,255,255);
+    #outline:4px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -300px;
+    width: 600px;
+    height: 600px;
+}
+  
+#vert-box-1{
+    outline:inherit;
+    position:inherit;
+    width:33%;
+    height:100%;
+    margin-left:0%;
+}
+
+#tl-box {
+    outline:4px solid;
+    position:inherit;
+    height:33%;
+    width:100%;
+    margin-right:2px;
+}
+
+#ml-box {
+    outline:4px solid;
+    position:inherit;
+    height:33%;
+    width:100%;
+    margin-top:100%;
+    margin-right:2px;
+}
+
+#bl-box{
+    outline:4px solid;
+    position:inherit;
+    height:34%;
+    width:100%;
+    margin-top:200%;
+    margin-bottom:2px;
+}
+
+#vert-box-2{
+    outline:inherit;
+    position:inherit;
+    width:33%;
+    height:100%;
+    margin-left:33%;
+}
+
+#tm-box{
+    outline:4px solid;
+    position:inherit;
+    height:33%;
+    width:100%;
+    margin-right:2px;
+}
+
+
+#mm-box{
+    #outline:inherit;
+    outline:4px solid;
+    position:inherit;
+    outline:4px solid;
+    height:33%;
+    width:100%;
+    margin-top:100%;
+    margin-right:2px;
+}
+
+
+#bm-box{
+    outline:4px solid;
+    position:inherit;
+    height:34%;
+    width:100%;
+    margin-top:200%;
+
+    margin-bottom:2px;
+}
+
+#vert-box-3{
+    outline:inherit;
+    position:inherit;
+    width:33%;
+    height:100%;
+    margin-left:66%;
+    #box-shadow: 100px 0 0 #000;
+}
+
+#tr-box {
+    outline:4px solid;
+    position:inherit;
+    height:33%;
+    width:100%;
+    margin-right:2px;
+}
+#mr-box{
+    outline:4px solid;
+    position:inherit;
+    height:33%;
+    width:100%;
+    margin-top:100%;
+    margin-right:2px;
+}
+#br-box{
+    outline:4px solid;
+    position:inherit;
+    height:34%;
+    width:100%;
+    margin-top:200%;
+    margin-bottom:2px;
+}
+/*#######now handle style of inner boards########*/
+
+/*Top row:*/
+.tl {
+    box-shadow: 0 1px 0 #000,
+                1px 0 0 #000;
+    #outline:dotted;
+    position:absolute;
+    width:20%;
+    height:20%;
+    margin-top:20%;
+    margin-left:20%;
+}
+
+.tm {
+    box-shadow: 0 1px 0 #000;
+    #outline: dotted;
+    position:absolute;
+    width:20%;
+    height:20%;
+    margin-top:20%;
+    margin-left:40%;
+}
+
+.tr {
+    box-shadow: 0 1px 0 #000,
+                -1px 0 0 #000;
+    position:absolute;
+    #outline: dotted;
+    width:20%;
+    height:20%;
+    margin-top:20%;
+    margin-left:60%;
+}
+/*Middle row*/
+.ml {
+    box-shadow: 1px 0 0 #000;
+    position:absolute;
+    #outline: dotted;
+    width:20%;
+    height:20%;
+    margin-top:40%;
+    margin-left:20%;
+}
+
+.mm {
+    #box-shadow: 0 -1px 0 #000;
+    position:absolute;
+/*
+    box-shadow: 0 1px 0 #000,
+                1px 0 0 #000,
+                0 -1px 0 #000,
+                -1px 0 0 #000;
+*/
+    width:20%;
+    height:20%;
+    margin-top:40%;
+    margin-left:40%;
+}
+
+.mr {
+    box-shadow: -1px 0 0 #000;
+    position:absolute;
+    #outline: dotted;
+    width:20%;
+    height:20%;
+    margin-top:40%;
+    margin-left:60%;
+}
+/*Bottom row*/
+.bl {
+    box-shadow: 0 -1px 0 #000,
+                1px 0 0 #000;
+    position:absolute;
+    #outline: dotted;
+    width:20%;
+    height:20%;
+    margin-top:60%;
+    margin-left:20%;
+}
+
+.bm {
+    box-shadow: 0 -1px 0 #000;
+    position:absolute;
+    #outline: dotted;
+    width:20%;
+    height:20%;
+    margin-top:60%;
+    margin-left:40%;
+}
+
+.br {
+    box-shadow: 0 -1px 0 #000,
+                -1px 0 0 #000;
+    position:absolute;
+    #outline: dotted;
+    width:20%;
+    height:20%;
+    margin-top:60%;
+    margin-left:60%;
+}
+.overlay {
+  opacity: 0.25 !important; 
+}
+ .expose{
+  z-index:99999;
+  background-color:red;
+  position:relative
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script type="text/javascript" charset="utf-8" src="custom/scripts/index.js"></script>
+    <link href="custom/style/index.css" rel="stylesheet" type="text/css"/>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TicTacToe</title>
+</head>
+    <body>
+	 
+    <div class="row">
+	<div class="col-md-4">
+	{{#each users}}
+	  <li>{{this}}</li>
+        {{/each}}
+    	</div>
+    </div>
+   	 
+        <div id="main-box">
+            <div id="vert-box-1">
+                <div class="gameAction" id="tl-box">
+                    <div class="tl" id="tl-00"></div>
+                    <div class="tm" id="tl-01"></div>
+                    <div class="tr" id="tl-02"></div>
+                    <div class="ml" id="tl-10"></div>
+                    <div class="mm" id="tl-11"></div>
+                    <div class="mr" id="tl-12"></div>
+                    <div class="bl" id="tl-20"></div>
+                    <div class="bm" id="tl-21"></div>
+                    <div class="br" id="tl-22"></div>
+                </div>
+                <div class="gameAction" id="ml-box">
+                    <div class="tl" id="ml-00"></div>
+                    <div class="tm" id="ml-01"></div>
+                    <div class="tr" id="ml-02"></div>
+                    <div class="ml" id="ml-10"></div>
+                    <div class="mm" id="ml-11"></div>
+                    <div class="mr" id="ml-12"></div>
+                    <div class="bl" id="ml-20"></div>
+                    <div class="bm" id="ml-21"></div>
+                    <div class="br" id="ml-22"></div>
+                </div>
+                <div class="gameAction" id="bl-box">
+                    <div class="tl" id="bl-00"></div>
+                    <div class="tm" id="bl-01"></div>
+                    <div class="tr" id="bl-02"></div>
+                    <div class="ml" id="bl-10"></div>
+                    <div class="mm" id="bl-11"></div>
+                    <div class="mr" id="bl-12"></div>
+                    <div class="bl" id="bl-20"></div>
+                    <div class="bm" id="bl-21"></div>
+                    <div class="br"  id="bl-22"></div>
+                </div>
+            </div>
+            <div id="vert-box-2">
+                <div class="gameAction" id="tm-box">
+                    <div class="tl" id="tm-00"></div>
+                    <div class="tm" id="tm-01"></div>
+                    <div class="tr" id="tm-02"></div>
+                    <div class="ml" id="tm-10"></div>
+                    <div class="mm" id="tm-11"></div>
+                    <div class="mr" id="tm-12"></div>
+                    <div class="bl" id="tm-20"></div>
+                    <div class="bm" id="tm-21"></div>
+                    <div class="br" id="tm-22"></div>
+                </div>
+                <div class="gameAction" id="mm-box">
+                    <div class="tl" id="mm-00"></div>
+                    <div class="tm" id="mm-01"></div>
+                    <div class="tr" id="mm-02"></div>
+                    <div class="ml" id="mm-10"></div>
+                    <div class="mm" id="mm-11"></div>
+                    <div class="mr" id="mm-12"></div>
+                    <div class="bl" id="mm-20"></div>
+                    <div class="bm" id="mm-21"></div>
+                    <div class="br" id="mm-22"></div>
+                </div>
+                <div class="gameAction" id="bm-box">
+                    <div class="tl" id="bm-00"></div>
+                    <div class="tm" id="bm-01"></div>
+                    <div class="tr" id="bm-02"></div>
+                    <div class="ml" id="bm-10"></div>
+                    <div class="mm" id="bm-11"></div>
+                    <div class="mr" id="bm-12"></div>
+                    <div class="bl" id="bm-20"></div>
+                    <div class="bm" id="bm-21"></div>
+                    <div class="br" id="bm-22"></div>
+                </div>
+            </div>
+            <div id="vert-box-3">
+                <div class="gameAction" id="tr-box">
+                    <div class="tl" id="tr-00"></div>
+                    <div class="tm" id="tr-01"></div>
+                    <div class="tr" id="tr-02"></div>
+                    <div class="ml" id="tr-10"></div>
+                    <div class="mm" id="tr-11"></div>
+                    <div class="mr" id="tr-12"></div>
+                    <div class="bl" id="tr-20"></div>
+                    <div class="bm" id="tr-21"></div>
+                    <div class="br" id="tr-22"></div>
+                </div>
+                <div class="gameAction" id="mr-box">
+                    <div class="tl" id="mr-00"></div>
+                    <div class="tm" id="mr-01"></div>
+                    <div class="tr" id="mr-02"></div>
+                    <div class="ml" id="mr-10"></div>
+                    <div class="mm" id="mr-11"></div>
+                    <div class="mr" id="mr-12"></div>
+                    <div class="bl" id="mr-20"></div>
+                    <div class="bm" id="mr-21"></div>
+                    <div class="br" id="mr-22"></div>
+                </div>
+                <div class="gameAction" id="br-box">
+                    <div class="tl" id="br-00"></div>
+                    <div class="tm" id="br-01"></div>
+                    <div class="tr" id="br-02"></div>
+                    <div class="ml" id="br-10"></div>
+                    <div class="mm" id="br-11"></div>
+                    <div class="mr" id="br-12"></div>
+                    <div class="bl" id="br-20"></div>
+                    <div class="bm" id="br-21"></div>
+                    <div class="br" id="br-22"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
