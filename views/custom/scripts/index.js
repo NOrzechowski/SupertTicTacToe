@@ -14,11 +14,12 @@ $(document).ready(function() {
 		if(gamePiece == 'x'){
 			$(locationId).addClass('o');
 		}else{
+      
 			$(locationId).addClass('x');
 		}
 	}
     });
-    
+
 
     $('.gameAction > div').click(function(){
 	var idStr = $(this).attr('id').toString();
