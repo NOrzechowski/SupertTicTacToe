@@ -18,6 +18,7 @@ $(document).ready(function() {
 		}
 	}
     });
+    
 
     $('.gameAction > div').click(function(){
 	var idStr = $(this).attr('id').toString();
@@ -28,11 +29,11 @@ $(document).ready(function() {
 	$(locationId).addClass(gamePiece);
 	var box =  loc + "-box";
 	var boxDiv = document.getElementById(box);
-	$("#" + box).addClass("overlay");	
+	$("#" + box).addClass("overlay");
 	console.log("clicked on : " + locationId);
 	socket.emit('move', {position:loc,x:x,y:y});
     });
 
-    //TODO: need to write a function which checks three in a rows 
-    //TODO: write a function to save moves to a database to potentially apply ML to?? Also need to save whether the user won or not   
+    //TODO: need to write a function which checks three in a rows
+    //TODO: write a function to save moves to a database to potentially apply ML to?? Also need to save whether the user won or not
 })
