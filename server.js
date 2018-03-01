@@ -11,7 +11,7 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cookie = require('cookie');
-var users = [] 
+var users = []
 app.set('views',views);
 app.engine('handlebars',exphbs());
 app.set('view engine', 'handlebars');
@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 const server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 app.get('/', function(req,res){
-        if(req.cookies['metadata'] && req.cookies['metadata'].persist == 'on'){	
+        if(req.cookies['metadata'] && req.cookies['metadata'].persist == 'on'){
 	      	res.render('game',{users:users});
 	}else{
 		res.sendFile(INDEX);
@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
 	  	var emitData = {position:data.position, x:data.x,y:data.y};
 		io.emit('moved',emitData);
 	  });
-	  socket.on('disconnect', function(req,res){ 
+	  socket.on('disconnect', function(req,res){
 		console.log("logging off: " + JSON.stringify(req));
 	  });
 });
@@ -51,7 +51,7 @@ app.post('/login',function(req,res){
 	var username = req.body.username;
 	var rememberMe = req.body.checkbox;
 	if (numPlayers < 2 && !_.contains(users,username)){
-	    numPlayers++;	  
+	    numPlayers++;
 	    users.push(username);
 	    res.cookie('metadata',{username:username,persist:rememberMe});
 	    res.render('game',{users:users});
